@@ -1,0 +1,9 @@
+- name: Update and install packages
+  hosts: web_servers
+  gather_facts: yes
+  become: yes
+  vars:
+    ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
+  remote_user: ec2-user
+  roles:
+    - common
